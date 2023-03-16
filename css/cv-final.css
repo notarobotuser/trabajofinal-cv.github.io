@@ -1,0 +1,407 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Lucida Sans", sans-serif;
+  }
+
+body {
+    background-color: rgb(177, 177, 177);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 1250px;
+    min-height: 1000px;
+    margin: 50px;
+    background: #ddd;
+    box-shadow: 0 35px 55px rgba(0,0,0,0.1);
+}
+
+.container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* ELEMENTOS CONTENIDOS EN CONTENEDOR IZQUIERDO */
+.container .cont-izq {
+    display: flex;
+    flex: 35%;
+    flex-direction: column;
+    position: relative;
+    background: #003147;
+    padding: 40px;
+}
+
+/* IMAGEN PERFIL */
+#foto {
+    height: 250px;
+    width: 250px;
+    border-radius: 50px;
+    text-align: center;
+    }
+
+  /* ESTILO DE FLIP FOTO PERFIL */
+  /* FLIP CARD Foto Perfil */
+  .flip-card {
+    background-color: transparent;
+    text-align: center;
+    width: 250;
+    height: 250;
+    border: none;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: rgb(61, 62, 82);
+    color: black;
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    height: 250px;
+    width: 250px;
+    text-align: center;
+    background-color: dodgerblue;
+    border-radius: 50px;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .flip-card-back #QR {
+    text-align: center;
+    height: 250px;
+    width: 250px;
+    border-radius: 50px;
+  }
+
+/* TEXTO DEBAJO FOTO PERFIL */
+.texto-perfil {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+  
+  .texto-perfil .caja-imagen {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .texto-perfil .caja-imagen img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .texto-perfil h2 {
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 200;
+    line-height: 1,5em;
+  }
+
+  
+/* TELEFONO - MAIL - LINKEDIN - DIRECCION */
+.info-contacto {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+  .titulo {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    }
+    .info-contacto ul {
+      position: relative;
+    }
+    .info-contacto ul li {
+      position: relative;
+      list-style: none;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .info-contacto ul li .icono {
+      display: inline-block;
+      width: 30px;
+      font-size: 18px;
+      color: #03a9f4;
+    }
+    .info-contacto ul li span {
+      color: white;
+      font-weight: 300;
+    }
+    .info-contacto ul li a:link {
+      color: white;
+      font-weight: 300;
+    }
+    .info-contacto ul li a:visited {
+      color: white;
+      font-weight: 300;
+    }
+    .info-contacto ul li a:hover {
+      color: #15ca24;
+    }
+    #ubicacion {
+      color: white;
+      font-weight: 300;
+      text-decoration: none;
+    }
+  
+  /* CAPACIDADES: HTML, CSS, PAQ OFFICE, ADOBE */
+    .info-contacto-capacidades {
+      padding-top: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .info-contacto-capacidades ul {
+      position: relative;
+    }
+    .info-contacto-capacidades ul li {
+      position: relative;
+      list-style: none;
+      margin: 10px 0;
+    }
+    .info-contacto-capacidades ul li div {
+      color: white;
+      font-weight: 300;
+    }
+  
+    /* Color estrellas Capacidades/Habilidades */
+    [class="fa fa-star"] {
+      color: orangered;
+      font-size: 25px;
+    }
+  
+    [class="fa fa-star-half-o"] {
+      color: orangered;
+      font-size: 25px;
+    }
+  
+    [class="fa fa-star-o"] {
+      color: orangered;
+      font-size: 25px;
+    }
+  
+  
+  /* IDIOMAS y BARRA REACTIVA FIJA*/
+  #myProgress {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: #081921;
+    display: block;
+    margin-top: 5px;
+  }
+  #myBar1, #myBar2, #myBar3 {
+    width: 10%;
+    height: 100%;
+    background: #15ca24;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+  }
+  
+  .boton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  .boton {
+    font-size: 15px;
+    color: white;
+    font-weight: 300;
+    background-color: #03a9f4;
+    text-align: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  /* IDIOMAS y BARRA FIJA*/
+  /* OK */
+    .info-contacto-idioma {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+  
+    .info-contacto-idioma ul li {
+      position: relative;
+      list-style: none;
+      margin: 10px 0;
+    }
+  
+
+/* ELEMENTOS CONTENIDOS EN CONTENEDOR DERECHO */
+.container .cont-der {
+    flex: 65%;
+    flex-direction: column;
+    position: relative;
+    background: white;
+    padding: 40px;
+}
+/* IMAGEN EN EXP. LAB. QUE APARECE EN PANTALLA CHICA */
+#fot {
+    display: none;
+}
+
+.resumen {
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(44, 42, 42, 0.445);
+    }
+
+    .about:last-child {
+      margin-bottom: 0;
+    }
+    .titulo2 {
+      color: #003147;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .titulo3 {
+      color: #003147;
+      text-align: center;
+      font-size: 45px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+  p {
+  color: #333;
+  text-align: justify;
+  }
+  
+  .resumen .caja {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+  }
+  .resumen .caja .año-empresa {
+    min-width: 150px;
+  }
+  .resumen .caja .año-empresa h5 {
+    text-transform: uppercase;
+    color: rgb(94, 86, 94);
+    font-weight: 600;
+    margin-top: 0px;
+  }
+  .resumen .caja .texto h4 {
+  text-transform: uppercase;
+  color: #2a7da2;
+  font-size: 16px;
+  padding-top: 10px;
+  }
+  
+
+/* Texto "COLAPSABLE" */
+#conozca {
+  width: 100%;
+  padding: 25px 0;
+  text-align: center;
+  background-color: rgb(245, 245, 245);
+  margin-top: 20px;
+  display: none;
+  border-radius: 15px;
+}
+
+#boton4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+/* CUANDO EL TAMAÑO SEA MENOR A 600px */
+    @media only screen and (max-width: 600px) {
+        .container {
+            flex-direction: column;
+        }
+        #fot {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container .cont-der {
+          padding-bottom: 0px;
+        }
+
+        .container .cont-izq {
+          padding-top: 0px;
+        }
+
+        .texto-perfil h2 {
+            color: black;
+            font-size: 20px;
+            margin-top: 10px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 600;
+            line-height: 1,5em;
+          }
+
+        #fot {order: 1;}
+        div .cont-der {order: 2;}
+        div .cont-izq {order: 3;}
+        #cap {order: 4;}
+        #idi {order: 5;}
+        #info {order: 6;}
+        #txt {
+            display: none;
+        }
+        
+      }
